@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramatrix — Automation and AI agents for your business</title>
+<meta name="description" content="Automation and AI agents for your business: inbox agents, website data extraction and report automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F4F2F8}
+a{color:inherit}
+a.btn:hover{opacity:.88}
+.choice{transition:transform .15s ease, box-shadow .15s ease}
+.choice:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(21,17,31,.12)}
+.zw{position:relative;width:100%;max-width:480px}
+.zv{width:100%;aspect-ratio:1/1;overflow:auto;border-radius:28px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.zin{width:100%}
+.zw:has(.zc:checked) .zin{zoom:1.8}
+.zw:has(.zc:checked) .zv{cursor:grab}
+.zc{position:absolute;opacity:0;width:1px;height:1px}
+.zl{position:absolute;right:12px;bottom:12px;z-index:2;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid #DDD9E6;border-radius:12px;color:#15111F;cursor:pointer;box-shadow:0 2px 8px rgba(21,17,31,.1)}
+.zl:hover{background:#EDEAFB}
+.zl .zi-out{display:none}
+.zw:has(.zc:checked) .zl .zi-in{display:none}
+.zw:has(.zc:checked) .zl .zi-out{display:block}
+.zc:focus-visible ~ .zl{outline:3px solid #F0B240;outline-offset:3px}
+.modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(21,17,31,.62);padding:24px;overflow:auto;box-sizing:border-box}
+.mc{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:1}
+#top:has(#m-admin:checked) #ex-admin{display:flex}
+#top:has(#m-data:checked) #ex-data{display:flex}
+#top:has(#m-docs:checked) #ex-docs{display:flex}
+.choice:has(.mc:focus-visible){outline:3px solid #F0B240;outline-offset:3px}
+.choice,.mx,.mback{cursor:pointer}
+.mback{position:fixed;inset:0;cursor:default}
+.mpanel{position:relative;background:#FFFFFF;border-radius:28px;max-width:1040px;width:100%;margin:auto;padding:44px 40px 40px;box-sizing:border-box;box-shadow:0 24px 80px rgba(21,17,31,.35)}
+.mx{position:absolute;top:14px;right:14px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#F4F2F8;color:#15111F;text-decoration:none}
+.mx:hover{background:#EDEAFB}
+.choice .go{transition:transform .15s ease}
+.choice:hover .go{transform:translate(2px,-2px)}
+#work{scroll-margin-top:24px}
+a:focus-visible{outline:3px solid #F0B240;outline-offset:3px}
+</style>
+</head>
+<body>
+<div id="top" style="box-sizing: border-box; background: #F4F2F8; color: #15111F; font-family: 'Hanken Grotesk', sans-serif; font-size: 17px; line-height: 1.55">
+
+<!-- NAV -->
+<header>
+<div style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px">
+<a href="#top" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; text-decoration: none"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true" style="flex:none"><rect x="2" y="2" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="24" y="2" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="46" y="2" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="2" y="24" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="24" y="24" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="46" y="24" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="2" y="46" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="24" y="46" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="46" y="46" width="16" height="16" rx="4.5" fill="#5B3FD1"/></svg><span style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.16em">RAMATRI<span style="color: #5B3FD1">X</span></span></a>
+<div style="display: flex; align-items: center; gap: 12px">
+<a href="lt.html" aria-label="Perjungti į lietuvių kalbą" style="display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; color: #5C5670; text-decoration: none">LT</a>
+<a class="btn" href="#contact" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-weight: 600; text-decoration: none">Contact</a>
+</div>
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section aria-labelledby="hero-title" style="padding: 64px 0 80px">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<h1 id="hero-title" style="margin: 0; max-width: 16em; text-wrap: balance; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(42px, 6vw, 76px); line-height: 1.03; letter-spacing: -0.03em">What are you still doing by hand?</h1>
+<p style="margin: 22px 0 0; max-width: 36em; font-size: 20px; color: #433D55">Want automation or an AI agent, but not sure where it fits in your business? Start with the thing you do every week and wish you didn't.</p>
+<div>
+<div id="work" style="display: flex; flex-direction: column; gap: 16px; margin-top: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<label class="choice" for="m-admin" style="box-sizing: border-box; position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 20px; padding: 24px 32px; color: #15111F"><input type="checkbox" class="mc" id="m-admin" aria-label="Administration: open example" aria-haspopup="dialog">
+<div style="flex: 0 1 320px; min-width: 240px; display: flex; flex-direction: column; align-items: flex-start"><div style="display: flex; align-items: center; gap: 14px"><div style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Administration</div></div></div>
+<div style="flex: 1 1 380px; min-width: 0"><div style="padding: 14px 0; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">Where did the client say that?</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">What happened last week, and what's coming next?</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I wish someone could answer the routine emails for me.</div></div>
+<div class="go" aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 16px; background: #5B3FD1; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></div>
+</label>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<label class="choice" for="m-data" style="box-sizing: border-box; position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 20px; padding: 24px 32px; color: #15111F"><input type="checkbox" class="mc" id="m-data" aria-label="Data extraction: open example" aria-haspopup="dialog">
+<div style="flex: 0 1 320px; min-width: 240px; display: flex; flex-direction: column; align-items: flex-start"><div style="display: flex; align-items: center; gap: 14px"><div style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg></div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Data extraction</div></div></div>
+<div style="flex: 1 1 380px; min-width: 0"><div style="padding: 14px 0; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">What are my competitors charging today?</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">Where is my delivery right now?</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I copy numbers from a website into a spreadsheet by hand.</div></div>
+<div class="go" aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 16px; background: #5B3FD1; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></div>
+</label>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<label class="choice" for="m-docs" style="box-sizing: border-box; position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 20px; padding: 24px 32px; color: #15111F"><input type="checkbox" class="mc" id="m-docs" aria-label="Documents and reports: open example" aria-haspopup="dialog">
+<div style="flex: 0 1 320px; min-width: 240px; display: flex; flex-direction: column; align-items: flex-start"><div style="display: flex; align-items: center; gap: 14px"><div style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Documents and reports</div></div></div>
+<div style="flex: 1 1 380px; min-width: 0"><div style="padding: 14px 0; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I send the same report every Friday.</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I have piles of documents I need information out of.</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I wish I knew what customers are saying about us.</div></div>
+<div class="go" aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 16px; background: #5B3FD1; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EXAMPLE POPUPS -->
+<div id="ex-admin" class="modal" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+<label class="mback" for="m-admin" aria-label="Close"></label>
+<div class="mpanel">
+<label class="mx" for="m-admin" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 36px">
+<div style="flex: 1 1 380px; min-width: 0">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B3FD1">Example · AI agent for your inbox and chats</p>
+<h2 id="admin-title" style="margin: 14px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08; letter-spacing: -0.025em">Your inbox and chats, under control.</h2>
+<p style="margin: 16px 0 0; max-width: 32em; color: #433D55">Ask questions, get a weekly overview, and have routine replies drafted. Nothing is sent without your OK.</p>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 20px; max-width: 34em">
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Where did they say that?</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Ask in Telegram or Slack, "What did the client say about the deadline?" The agent searches your email and chat and answers with links.</div></div>
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">What happened last week? What's coming next week?</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Every Monday morning you get one message with the key emails, decisions, deadlines and meetings.</div></div>
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Reply drafts in your tone, approved with one tap.</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">The agent drafts answers to routine emails in your style and sends them to you in Telegram or Slack. Approve with one tap, or edit first.</div></div>
+</div>
+<p style="margin: 16px 0 0; font-size: 15px; color: #5C5670">Works with: Gmail, Slack, Telegram.</p>
+<div style="margin-top: 24px"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Sort%20out%20my%20inbox" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-weight: 600; text-decoration: none">Sort out my inbox</a><span style="margin-left: 14px; font-size: 14px; color: #5C5670">or write to <a href="mailto:ramatrix@gmail.com" style="font-weight: 600; color: #15111F">ramatrix@gmail.com</a></span></div>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+<div role="img" aria-label="Diagram: your email and chat go to an AI agent that returns a ready reply draft" style="width: 100%; max-width: 480px; aspect-ratio: 1 / 1; box-sizing: border-box; padding: 36px; display: flex; flex-direction: column; justify-content: center; background-color: #FBFBFE; background-image: radial-gradient(circle, #B4BDF2 1.5px, transparent 1.8px); background-size: 22px 22px; border: 1px solid #DDD9E6; border-radius: 28px">
+<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 10px 14px">
+<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></div>
+<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Email and chat</div><div style="font-size: 13px; line-height: 1.3; color: #5C5670">Gmail, Slack, Telegram</div></div>
+</div>
+<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
+<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #5B3FD1; color: #FFFFFF; border-radius: 14px; padding: 10px 14px">
+<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #FFFFFF2E; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="10" rx="3"></rect><path d="M12 8V5"></path><circle cx="12" cy="4" r="1"></circle><circle cx="9.5" cy="13" r="1"></circle><circle cx="14.5" cy="13" r="1"></circle></svg></div>
+<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">AI agent</div><div style="font-size: 13px; line-height: 1.3; color: #E4DEFA">Finds, summarizes, drafts</div></div>
+</div>
+<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
+<div style="align-self: center; width: 100%; max-width: 320px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 14px 16px; box-shadow: 0 6px 18px rgba(21,17,31,.08)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A7096">Example output</div><div style="margin-top: 8px; font-size: 15px; font-weight: 600; line-height: 1.3">Draft reply · Re: Delivery date</div><div style="margin-top: 4px; font-size: 14px; line-height: 1.45; color: #433D55">Hi Anna, Thursday works for us. I'll confirm the time tomorrow morning.</div><div aria-hidden="true" style="display: flex; gap: 8px; margin-top: 12px; pointer-events: none; user-select: none; opacity: .8"><span style="display: inline-flex; align-items: center; min-height: 30px; padding: 0 14px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-size: 13px; font-weight: 600">Send</span><span style="display: inline-flex; align-items: center; min-height: 30px; padding: 0 14px; border-radius: 8px; border: 1.5px solid #CFC8E3; color: #15111F; font-size: 13px; font-weight: 600">Edit</span></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="ex-data" class="modal" role="dialog" aria-modal="true" aria-labelledby="data-title">
+<label class="mback" for="m-data" aria-label="Close"></label>
+<div class="mpanel">
+<label class="mx" for="m-data" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 36px">
+<div style="flex: 1 1 380px; min-width: 0">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B3FD1">Example · Data from websites</p>
+<h2 id="data-title" style="margin: 14px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08; letter-spacing: -0.025em">Turn any website into your own data.</h2>
+<p style="margin: 16px 0 0; max-width: 32em; color: #433D55">A scraper collects the information on a schedule and delivers it to a sheet, an alert in your inbox, or however you like.</p>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 20px; max-width: 34em">
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Competitor services</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Know the day a price changes.</div></div>
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Delivery status</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">All tracking pages in one table.</div></div>
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Data into your sheet</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">The same pages are visited every morning and your sheet fills itself.</div></div>
+</div>
+<div style="margin-top: 24px"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Get%20my%20data" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-weight: 600; text-decoration: none">Get my data</a><span style="margin-left: 14px; font-size: 14px; color: #5C5670">or write to <a href="mailto:ramatrix@gmail.com" style="font-weight: 600; color: #15111F">ramatrix@gmail.com</a></span></div>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+<div role="img" aria-label="Diagram: websites go through a scraper and arrive as a table of price changes" style="width: 100%; max-width: 480px; aspect-ratio: 1 / 1; box-sizing: border-box; padding: 36px; display: flex; flex-direction: column; justify-content: center; background-color: #FBFBFE; background-image: radial-gradient(circle, #B4BDF2 1.5px, transparent 1.8px); background-size: 22px 22px; border: 1px solid #DDD9E6; border-radius: 28px">
+<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 10px 14px">
+<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"></path></svg></div>
+<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Websites</div><div style="font-size: 13px; line-height: 1.3; color: #5C5670">Even with no export button</div></div>
+</div>
+<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
+<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #5B3FD1; color: #FFFFFF; border-radius: 14px; padding: 10px 14px">
+<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #FFFFFF2E; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg></div>
+<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Scraper</div><div style="font-size: 13px; line-height: 1.3; color: #E4DEFA">Collects on a schedule</div></div>
+</div>
+<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
+<div style="align-self: center; width: 100%; max-width: 330px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 14px 16px; box-shadow: 0 6px 18px rgba(21,17,31,.08)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A7096">Example output</div><div style="margin-top: 8px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B3FD1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M3 15h18M9 4v16"></path></svg>competitors.xlsx</div><div style="margin-top: 10px; display: grid; grid-template-columns: 1.1fr 1.3fr 0.7fr; border-top: 1px solid #DDD9E6; border-left: 1px solid #DDD9E6; border-radius: 4px; overflow: hidden"><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; font-weight: 600; background: #EDEAFB; color: #15111F">Company</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; font-weight: 600; background: #EDEAFB; color: #15111F">Plan</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; font-weight: 600; background: #EDEAFB; color: #15111F">Price</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Company A</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Basic plan</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; text-align: right; font-weight: 600">€500</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Company B</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Basic plan</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; text-align: right; font-weight: 600">€480</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Company C</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Basic plan</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; text-align: right; font-weight: 600">€520</div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="ex-docs" class="modal" role="dialog" aria-modal="true" aria-labelledby="docs-title">
+<label class="mback" for="m-docs" aria-label="Close"></label>
+<div class="mpanel">
+<label class="mx" for="m-docs" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 36px">
+<div style="flex: 1 1 380px; min-width: 0">
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B3FD1">Example · Reports and documents</p>
+<h2 id="docs-title" style="margin: 14px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08; letter-spacing: -0.025em">Less paperwork, same quality.</h2>
+<p style="margin: 16px 0 0; max-width: 32em; color: #433D55">Recurring reports, invoices, contracts and reviews get handled automatically. Where simple automation is enough, no AI is used.</p>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 20px; max-width: 34em">
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">The same report every Friday</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Numbers are pulled from your tools, filled into your Word or PDF template and emailed. No AI needed.</div></div>
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Piles of documents</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Invoices and contracts become one table, or you ask, "What does this say about termination?"</div></div>
+<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">What are customers saying?</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Hundreds of reviews or emails become the top complaints, and whether they're improving.</div></div>
+</div>
+<div style="margin-top: 24px"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Lighten%20my%20paperwork" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-weight: 600; text-decoration: none">Lighten my paperwork</a><span style="margin-left: 14px; font-size: 14px; color: #5C5670">or write to <a href="mailto:ramatrix@gmail.com" style="font-weight: 600; color: #15111F">ramatrix@gmail.com</a></span></div>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+<div role="img" aria-label="Diagram: your tools and files go through automation or AI and come out as a finished report" style="width: 100%; max-width: 480px; aspect-ratio: 1 / 1; box-sizing: border-box; padding: 36px; display: flex; flex-direction: column; justify-content: center; background-color: #FBFBFE; background-image: radial-gradient(circle, #B4BDF2 1.5px, transparent 1.8px); background-size: 22px 22px; border: 1px solid #DDD9E6; border-radius: 28px">
+<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 10px 14px">
+<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M9 4v16"></path></svg></div>
+<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Your tools and files</div><div style="font-size: 13px; line-height: 1.3; color: #5C5670">Sheets, PDFs, reviews</div></div>
+</div>
+<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
+<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #5B3FD1; color: #FFFFFF; border-radius: 14px; padding: 10px 14px">
+<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #FFFFFF2E; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="10" rx="3"></rect><path d="M12 8V5"></path><circle cx="12" cy="4" r="1"></circle><circle cx="9.5" cy="13" r="1"></circle><circle cx="14.5" cy="13" r="1"></circle></svg></div>
+<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Automation or AI</div><div style="font-size: 13px; line-height: 1.3; color: #E4DEFA">Whichever fits the task</div></div>
+</div>
+<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
+<div style="align-self: center; width: 100%; max-width: 320px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 14px 16px; box-shadow: 0 6px 18px rgba(21,17,31,.08)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A7096">Example output</div><div style="margin-top: 8px; display: flex; align-items: center; gap: 10px"><div style="flex: none; width: 32px; height: 32px; border-radius: 8px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></div><div><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Weekly report.pdf</div><div style="font-size: 13px; line-height: 1.3; color: #5C5670">Built and emailed every Friday morning</div></div></div><div style="height: 8px; border-radius: 4px; background: #EDEAFB; margin-top: 8px; width: 100%"></div><div style="height: 8px; border-radius: 4px; background: #EDEAFB; margin-top: 8px; width: 86%"></div><div style="height: 8px; border-radius: 4px; background: #EDEAFB; margin-top: 8px; width: 64%"></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="contact-title" style="background: #15111F; color: #EEEAF7; padding: 88px 0">
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<h2 id="contact-title" style="margin: 0; max-width: 16em; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.06; letter-spacing: -0.025em">Send the task, get an honest answer.</h2>
+<p style="margin: 20px 0 0; max-width: 34em; font-size: 19px; color: #B3ACC6">Describe the task in a few lines: what you do by hand, how often, and which tools are involved.</p>
+<div style="margin: 28px 0 0; max-width: 40em; padding: 20px 24px; border: 3px dotted #5A4C8A; border-radius: 16px; font-size: 18px; line-height: 1.5; color: #EEEAF7">Not every task needs a custom build. Often Claude or ChatGPT, set up properly, is enough. Ramatrix can set them up for you and your team, or build something custom when the task really needs it.</div>
+<div style="display: flex; align-items: center; gap: 14px; margin-top: 32px"><div aria-hidden="true" style="flex: none; width: 52px; height: 52px; border-radius: 50%; background: #5B3FD1; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.02em">RJ</div><div><div style="font-size: 18px; font-weight: 600; color: #EEEAF7">Ramūnas Jucevičius</div><div style="font-size: 15px; line-height: 1.4; color: #B3ACC6">AI Engineer · Automation, AI solutions, AI agent development, cloud engineering</div></div></div>
+<div style="margin-top: 24px"><a class="btn" href="mailto:ramatrix@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 10px; background: #FFFFFF; color: #15111F; font-weight: 600; font-size: 20px; text-decoration: none">ramatrix@gmail.com <span aria-hidden="true">→</span></a></div>
+</div>
+</section>
+
+</main>
+
+<footer style="background: #15111F; border-top: 3px dotted #3A3258; color: #B3ACC6">
+<div style="max-width: 1180px; margin: 0 auto; padding: 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+<span>© 2026 Ramatrix · Vilnius, Lithuania</span>
+<span>Automation · AI agents · Web scraping · Cloud engineering</span>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
