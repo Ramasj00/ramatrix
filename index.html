@@ -5,219 +5,283 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ramatrix — Automation and AI agents for your business</title>
 <meta name="description" content="Automation and AI agents for your business: inbox agents, website data extraction and report automation.">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem("theme")}catch(e){}if(t!="light"&&t!="dark")t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.dataset.theme=t</script>
+<link rel="canonical" href="https://ramasj00.github.io/ramatrix/">
+<link rel="alternate" hreflang="en" href="https://ramasj00.github.io/ramatrix/">
+<link rel="alternate" hreflang="lt" href="https://ramasj00.github.io/ramatrix/lt.html">
+<link rel="alternate" hreflang="x-default" href="https://ramasj00.github.io/ramatrix/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ramatrix">
+<meta property="og:title" content="Ramatrix — Automation and AI agents for your business">
+<meta property="og:description" content="Automation and AI agents for your business: inbox agents, website data extraction and report automation.">
+<meta property="og:url" content="https://ramasj00.github.io/ramatrix/">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='16' height='16' rx='4.5' fill='%235B3FD1'/%3E%3Crect x='24' y='2' width='16' height='16' rx='4.5' fill='%23D9D1F5'/%3E%3Crect x='46' y='2' width='16' height='16' rx='4.5' fill='%235B3FD1'/%3E%3Crect x='2' y='24' width='16' height='16' rx='4.5' fill='%23D9D1F5'/%3E%3Crect x='24' y='24' width='16' height='16' rx='4.5' fill='%235B3FD1'/%3E%3Crect x='46' y='24' width='16' height='16' rx='4.5' fill='%23D9D1F5'/%3E%3Crect x='2' y='46' width='16' height='16' rx='4.5' fill='%235B3FD1'/%3E%3Crect x='24' y='46' width='16' height='16' rx='4.5' fill='%23D9D1F5'/%3E%3Crect x='46' y='46' width='16' height='16' rx='4.5' fill='%235B3FD1'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <style>
-body{margin:0;background:#F4F2F8}
+:root{color-scheme:light dark;--bg:#F4F2F8;--surface:#FFFFFF;--surface2:#FBFBFE;--text:#15111F;--text2:#433D55;--muted:#5C5670;--line:#DDD9E6;--dot:#CFC8E3;--accent:#5B3FD1;--accent-text:#5B3FD1;--soft:#EDEAFB;--grid:#B4BDF2;--arrow:#6B6385;--focus:#5B3FD1;--shadow:rgba(21,17,31,.12);--chip:rgba(91,63,209,.10);--ok-bg:#DFF5E9;--ok-t:#0B5D3B;--warn-bg:#FFF1D1;--warn-t:#7A4B00;--bad-bg:#FFE0DA;--bad-t:#8A1F0E;--bg2:#E9E4F7;--band:#E4DEF5;--card:#FFFFFF;--glow:rgba(91,63,209,.12);--cardline:#DDD9E6;--blur:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--bg:#12101A;--surface:#1D1A2B;--surface2:#171424;--text:#EEEAF7;--text2:#C9C3DB;--muted:#A9A2BF;--line:#3A3552;--dot:#4A4468;--accent:#7A5CE8;--accent-text:#B8A8F8;--soft:#2B2547;--grid:#38386A;--arrow:#9E96B8;--focus:#F0B240;--shadow:rgba(0,0,0,.5);--chip:rgba(122,92,232,.22);--ok-bg:#123B2A;--ok-t:#7EE0B0;--warn-bg:#3D2E0B;--warn-t:#F2C46A;--bad-bg:#44171A;--bad-t:#FF9C8F;--bg2:#1B1633;--band:#15111F;--card:rgba(255,255,255,.05);--glow:rgba(122,92,232,.28);--cardline:rgba(255,255,255,.12);--blur:blur(14px)}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#12101A;--surface:#1D1A2B;--surface2:#171424;--text:#EEEAF7;--text2:#C9C3DB;--muted:#A9A2BF;--line:#3A3552;--dot:#4A4468;--accent:#7A5CE8;--accent-text:#B8A8F8;--soft:#2B2547;--grid:#38386A;--arrow:#9E96B8;--focus:#F0B240;--shadow:rgba(0,0,0,.5);--chip:rgba(122,92,232,.22);--ok-bg:#123B2A;--ok-t:#7EE0B0;--warn-bg:#3D2E0B;--warn-t:#F2C46A;--bad-bg:#44171A;--bad-t:#FF9C8F;--bg2:#1B1633;--band:#15111F;--card:rgba(255,255,255,.05);--glow:rgba(122,92,232,.28);--cardline:rgba(255,255,255,.12);--blur:blur(14px)}
+:root[data-theme=light]{color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(60% 700px at 85% 0,var(--glow),transparent) no-repeat,linear-gradient(160deg,var(--bg) 0%,var(--bg2) 100%) fixed var(--bg);color:var(--text);font-family:'Hanken Grotesk',sans-serif;font-size:17px;line-height:1.55}
 a{color:inherit}
-a.btn:hover{opacity:.88}
-.choice{transition:transform .15s ease, box-shadow .15s ease}
-.choice:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(21,17,31,.12)}
-.zw{position:relative;width:100%;max-width:480px}
-.zv{width:100%;aspect-ratio:1/1;overflow:auto;border-radius:28px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
-.zin{width:100%}
-.zw:has(.zc:checked) .zin{zoom:1.8}
-.zw:has(.zc:checked) .zv{cursor:grab}
-.zc{position:absolute;opacity:0;width:1px;height:1px}
-.zl{position:absolute;right:12px;bottom:12px;z-index:2;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid #DDD9E6;border-radius:12px;color:#15111F;cursor:pointer;box-shadow:0 2px 8px rgba(21,17,31,.1)}
-.zl:hover{background:#EDEAFB}
-.zl .zi-out{display:none}
-.zw:has(.zc:checked) .zl .zi-in{display:none}
-.zw:has(.zc:checked) .zl .zi-out{display:block}
-.zc:focus-visible ~ .zl{outline:3px solid #F0B240;outline-offset:3px}
-.modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(21,17,31,.62);padding:24px;overflow:auto;box-sizing:border-box}
-.mc{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:1}
-#top:has(#m-admin:checked) #ex-admin{display:flex}
-#top:has(#m-data:checked) #ex-data{display:flex}
-#top:has(#m-docs:checked) #ex-docs{display:flex}
-.choice:has(.mc:focus-visible){outline:3px solid #F0B240;outline-offset:3px}
-.choice,.mx,.mback{cursor:pointer}
-.mback{position:fixed;inset:0;cursor:default}
-.mpanel{position:relative;background:#FFFFFF;border-radius:28px;max-width:1040px;width:100%;margin:auto;padding:44px 40px 40px;box-sizing:border-box;box-shadow:0 24px 80px rgba(21,17,31,.35)}
-.mx{position:absolute;top:14px;right:14px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#F4F2F8;color:#15111F;text-decoration:none}
-.mx:hover{background:#EDEAFB}
-.choice .go{transition:transform .15s ease}
-.choice:hover .go{transform:translate(2px,-2px)}
-#work{scroll-margin-top:24px}
-a:focus-visible{outline:3px solid #F0B240;outline-offset:3px}
+h1,h2,h3,p,ul{margin:0}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--accent);color:#fff;padding:12px 18px;border-radius:8px;font-weight:600}
+.skip:focus{left:16px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-top:16px;padding-bottom:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:18px;letter-spacing:.16em}
+.brand b{color:var(--accent-text);font-weight:inherit}
+.navr{display:flex;align-items:center;gap:12px}
+.lang{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--muted);text-decoration:none}
+.theme{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:8px;background:transparent;color:var(--muted);cursor:pointer}
+.theme:hover{background:var(--soft);color:var(--text)}
+.theme .i-sun{display:none}
+:root[data-theme=dark] .theme .i-sun{display:block}
+:root[data-theme=dark] .theme .i-moon{display:none}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 22px;border:0;border-radius:8px;background:var(--accent);color:#fff;font:inherit;font-weight:600;text-decoration:none;cursor:pointer}
+.btn:hover{opacity:.88}
+.btn.big{min-height:52px;padding:0 26px;border-radius:10px;font-size:20px}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor}
+.hero{padding:64px 0 40px}
+h1{max-width:16em;text-wrap:balance;font-size:clamp(42px,6vw,76px);line-height:1.03;letter-spacing:-.03em}
+.lead{margin-top:22px;max-width:36em;font-size:20px;color:var(--text2)}
+
+.who{margin-bottom:20px}
+#work{display:flex;flex-direction:column;gap:16px;margin-top:48px}
+.choice{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:20px 40px;background:var(--card);border:1px solid var(--cardline);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);border-radius:20px;padding:24px 32px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.choice:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 32px var(--shadow)}
+.choice:has(.more:focus-visible){outline:3px solid var(--focus);outline-offset:3px}
+.ctitle{flex:0 1 320px;min-width:0;display:flex;align-items:center;gap:14px}
+.ctitle h2{font-size:28px;line-height:1.15;letter-spacing:-.02em}
+.ico{flex:none;width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--accent-text);display:flex;align-items:center;justify-content:center}
+.qs{flex:1 1 320px;min-width:0;list-style:none;padding:0}
+.qs li{padding:14px 0;font-size:19px;line-height:1.35;font-weight:500}
+.qs li+li{border-top:3px dotted var(--dot)}
+.more{flex:none;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border:0;border-radius:14px;background:var(--accent);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.more:focus-visible{outline:none}
+.more::after{content:"";position:absolute;inset:0;border-radius:20px}
+.contact{background:linear-gradient(to bottom,transparent,var(--band) 90px);padding:120px 0 88px}
+.contact h2{max-width:16em;font-size:clamp(34px,4.6vw,56px);line-height:1.06;letter-spacing:-.025em}
+.contact .lead{font-size:19px;max-width:34em}
+.note{margin-top:28px;background:var(--card);max-width:40em;padding:20px 24px;border:3px dotted var(--dot);border-radius:16px;font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+footer{background:var(--band);border-top:3px dotted var(--dot);color:var(--muted)}
+footer .wrap{padding-top:24px;padding-bottom:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-family:'JetBrains Mono',monospace;font-size:13px}
+dialog.modal{width:min(1320px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto;padding:0;border:0;border-radius:28px;background:var(--surface);color:var(--text);box-shadow:0 24px 80px rgba(21,17,31,.35)}
+dialog.modal::backdrop{background:rgba(21,17,31,.62)}
+html{scrollbar-gutter:stable}
+html:has(dialog[open]){overflow:hidden}
+.mpanel{position:relative;padding:72px 72px 64px;background:linear-gradient(160deg,var(--surface),var(--bg2))}
+.mx{position:absolute;top:14px;right:14px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;border-radius:12px;background:var(--bg);color:var(--text);cursor:pointer}
+.mx:hover{background:var(--soft)}
+.mgrid{display:flex;flex-wrap:wrap;align-items:center;gap:56px 80px}
+.mtxt{flex:1 1 380px;min-width:0}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.mtxt .eyebrow{display:inline-block;padding:6px 12px;border-radius:8px;background:var(--chip)}
+.mtxt h3{margin-top:18px;font-size:clamp(32px,3.9vw,48px);line-height:1.08;letter-spacing:-.025em}
+.mtxt .sub{margin-top:24px;font-size:18px;max-width:32em;color:var(--text2)}
+.works{margin-top:20px;font-size:15px;color:var(--muted)}
+.mcta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.mcta .btn{min-height:48px;padding:0 24px}
+.mcta span{font-size:14px;color:var(--muted)}
+.mcta span a{font-weight:600;color:var(--text)}
+.pick{display:flex;align-items:center;gap:8px;margin-top:40px;font-size:15px;font-weight:600;color:var(--accent-text)}
+.tabs{display:flex;flex-direction:column;gap:14px;margin-top:14px;max-width:34em}
+.tab{display:flex;align-items:flex-start;gap:12px;width:100%;text-align:left;padding:20px 22px;border:1.5px solid var(--line);border-radius:16px;background:var(--surface);color:var(--text);font:inherit;cursor:pointer;transition:border-color .15s,background .15s}
+.tab:hover{border-color:var(--accent);background:var(--soft)}
+.tab[aria-selected=true]{border-color:var(--accent);background:var(--soft);box-shadow:inset 4px 0 0 var(--accent)}
+.tn{flex:none;width:26px;height:26px;border-radius:50%;background:var(--soft);color:var(--accent-text);border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.tab[aria-selected=true] .tn{background:var(--accent);color:#fff}
+.tb{flex:1;min-width:0}
+.tt{display:block;font-weight:600;font-size:17px;line-height:1.35}
+.descs{display:grid;margin-top:20px;padding-left:18px;border-left:3px solid var(--accent)}
+.dd{grid-area:1/1;visibility:hidden;font-size:16px;line-height:1.55;color:var(--text2)}
+.dd.on{visibility:visible}
+.chev{flex:none;margin-top:2px;color:var(--accent-text);transition:transform .15s}
+.tab[aria-selected=true] .chev{transform:rotate(90deg)}
+.dwrap{flex:1 1 440px;min-width:0;display:flex;justify-content:center}
+.dg{width:100%;max-width:640px;padding:44px;background-color:var(--surface2);background-image:radial-gradient(circle,var(--grid) 1.5px,transparent 1.8px);background-size:22px 22px;border:1px solid var(--line);border-radius:28px}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dh2{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+.dnav{display:flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted)}
+.dnav button{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--line);border-radius:50%;background:var(--surface);color:var(--text);cursor:pointer}
+.dnav button:hover{border-color:var(--accent);background:var(--soft)}
+.dnav .prev svg{transform:rotate(180deg)}
+.dnav span{min-width:3em;text-align:center}
+.dh2 .lbl,.dnav span{background:var(--surface2);border-radius:6px;padding:2px 6px}
+.dps{display:grid}
+.dp{grid-area:1/1;align-self:center;visibility:hidden;opacity:0;transition:opacity .2s}
+.dp.on{visibility:visible;opacity:1}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 18px var(--shadow);overflow:hidden}
+.chead{display:flex;align-items:center;gap:8px;padding:14px 22px;border-bottom:1px solid var(--line);font-size:13px;font-weight:600;color:var(--muted)}
+.chead i{width:8px;height:8px;border-radius:50%;background:#36B37E}
+.msgs{padding:22px;display:flex;flex-direction:column;gap:14px}
+.m{max-width:88%;padding:14px 16px;border-radius:16px;font-size:16px;line-height:1.45}
+.m.me{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px}
+.m.bot{align-self:flex-start;background:var(--soft);color:var(--text);border-bottom-left-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;border:1px solid var(--dot);background:var(--surface);font-size:12px;font-weight:600;color:var(--text)}
+.chip.b{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip.ok{background:var(--ok-bg);border-color:transparent;color:var(--ok-t)}
+.chip.warn{background:var(--warn-bg);border-color:transparent;color:var(--warn-t)}
+.chip.bad{background:var(--bad-bg);border-color:transparent;color:var(--bad-t)}
+.chip.info{background:var(--soft);border-color:transparent;color:var(--accent-text)}
+.pad{padding:26px 28px}
+.dh{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sec{margin-top:20px}
+.sec b{display:block;font-size:14px;font-weight:600;color:var(--accent-text)}
+.sec ul{list-style:none;padding:0;margin-top:4px}
+.sec li{padding:9px 0;font-size:16px;line-height:1.4;border-top:1px dotted var(--dot)}
+.sec li:first-child{border-top:0}
+.alert{margin-bottom:16px;padding:12px 16px;border-radius:10px;background:var(--warn-bg);color:var(--warn-t);font-size:14px;font-weight:600}
+.fname{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.fname svg{color:var(--accent-text)}
+.tbl{margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line);border-radius:4px;overflow:hidden}
+.tbl div{padding:14px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:15px;line-height:1.3;display:flex;align-items:center}
+.tbl .h{font-weight:600;background:var(--soft)}
+.bars{margin-top:20px;display:flex;flex-direction:column;gap:22px}
+.bar b{display:flex;justify-content:space-between;font-size:16px;font-weight:600}
+.bar i{display:block;height:10px;border-radius:5px;background:var(--soft);margin-top:6px;overflow:hidden}
+.bar i u{display:block;height:100%;border-radius:5px;background:var(--accent)}
+.note2{margin-top:22px;font-size:16px;color:var(--text2)}
+.nd{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.nd.hl{background:var(--accent);border-color:var(--accent);color:#fff}
+.nd .ni{flex:none;width:36px;height:36px;border-radius:10px;background:var(--soft);color:var(--accent-text);display:flex;align-items:center;justify-content:center}
+.nd.hl .ni{background:rgba(255,255,255,.18);color:#fff}
+.nd b{display:block;font-size:17px;font-weight:600;line-height:1.25}
+.nd small{display:block;font-size:13px;line-height:1.3;color:var(--muted)}
+.nd.hl small{color:#fff}
+.flow{display:flex;flex-direction:column;align-items:stretch;max-width:400px;margin:0 auto}
+.arr{align-self:center;flex:none;color:var(--arrow)}
+@media (min-width:901px){.mpanel{min-height:900px;display:flex;flex-direction:column;justify-content:center}.dg{min-height:580px;display:flex;flex-direction:column}.dps{flex:1}}
+@media (max-width:1100px){.mpanel{padding:64px 40px 48px}.mgrid{gap:48px}}
+@media (max-width:900px){.mpanel{padding:60px 32px 40px}}
+@media (max-width:600px){
+.dg{padding:20px}
+.mgrid{gap:36px}
+.mpanel{padding:64px 20px 28px}
+.tab{padding:14px 16px}
+.choice{padding:20px}
+.hero{padding-top:40px}
+}
+@media (prefers-reduced-motion:reduce){.tab,.dp,.chev{transition:none}.choice{transition:none}.choice:hover{transform:none}}
 </style>
 </head>
 <body>
-<div id="top" style="box-sizing: border-box; background: #F4F2F8; color: #15111F; font-family: 'Hanken Grotesk', sans-serif; font-size: 17px; line-height: 1.55">
-
-<!-- NAV -->
+<a class="skip" href="#main">Skip to content</a>
 <header>
-<div style="max-width: 1180px; margin: 0 auto; padding: 16px 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px">
-<a href="#top" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; text-decoration: none"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true" style="flex:none"><rect x="2" y="2" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="24" y="2" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="46" y="2" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="2" y="24" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="24" y="24" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="46" y="24" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="2" y="46" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="24" y="46" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="46" y="46" width="16" height="16" rx="4.5" fill="#5B3FD1"/></svg><span style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.16em">RAMATRI<span style="color: #5B3FD1">X</span></span></a>
-<div style="display: flex; align-items: center; gap: 12px">
-<a href="lt.html" aria-label="Perjungti į lietuvių kalbą" style="display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; color: #5C5670; text-decoration: none">LT</a>
-<a class="btn" href="#contact" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-weight: 600; text-decoration: none">Contact</a>
+<div class="wrap nav">
+<a class="brand" href="#top" id="top"><svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true" style="flex:none"><rect x="2" y="2" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="24" y="2" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="46" y="2" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="2" y="24" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="24" y="24" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="46" y="24" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="2" y="46" width="16" height="16" rx="4.5" fill="#5B3FD1"/><rect x="24" y="46" width="16" height="16" rx="4.5" fill="#D9D1F5"/><rect x="46" y="46" width="16" height="16" rx="4.5" fill="#5B3FD1"/></svg><span>RAMATRI<b>X</b></span></a>
+<div class="navr">
+<a class="lang" href="lt.html" hreflang="lt" lang="lt" aria-label="Perjungti į lietuvių kalbą">LT</a>
+<button type="button" class="theme" id="theme" data-l="Switch to light mode" data-d="Switch to dark mode"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="i-moon"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="i-sun"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+<a class="btn" href="#contact">Contact</a>
 </div>
 </div>
 </header>
-
-<main>
-
-<!-- HERO -->
-<section aria-labelledby="hero-title" style="padding: 64px 0 80px">
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
-<h1 id="hero-title" style="margin: 0; max-width: 16em; text-wrap: balance; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(42px, 6vw, 76px); line-height: 1.03; letter-spacing: -0.03em">What are you still doing by hand?</h1>
-<p style="margin: 22px 0 0; max-width: 36em; font-size: 20px; color: #433D55">Want automation or an AI agent, but not sure where it fits in your business? Start with the thing you do every week and wish you didn't.</p>
-<div>
-<div id="work" style="display: flex; flex-direction: column; gap: 16px; margin-top: 48px">
-<div style="display: flex; flex-direction: column; gap: 12px">
-<label class="choice" for="m-admin" style="box-sizing: border-box; position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 20px; padding: 24px 32px; color: #15111F"><input type="checkbox" class="mc" id="m-admin" aria-label="Administration: open example" aria-haspopup="dialog">
-<div style="flex: 0 1 320px; min-width: 240px; display: flex; flex-direction: column; align-items: flex-start"><div style="display: flex; align-items: center; gap: 14px"><div style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Administration</div></div></div>
-<div style="flex: 1 1 380px; min-width: 0"><div style="padding: 14px 0; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">Where did the client say that?</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">What happened last week, and what's coming next?</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I wish someone could answer the routine emails for me.</div></div>
-<div class="go" aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 16px; background: #5B3FD1; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></div>
-</label>
-</div>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<label class="choice" for="m-data" style="box-sizing: border-box; position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 20px; padding: 24px 32px; color: #15111F"><input type="checkbox" class="mc" id="m-data" aria-label="Data extraction: open example" aria-haspopup="dialog">
-<div style="flex: 0 1 320px; min-width: 240px; display: flex; flex-direction: column; align-items: flex-start"><div style="display: flex; align-items: center; gap: 14px"><div style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg></div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Data extraction</div></div></div>
-<div style="flex: 1 1 380px; min-width: 0"><div style="padding: 14px 0; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">What are my competitors charging today?</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">Where is my delivery right now?</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I copy numbers from a website into a spreadsheet by hand.</div></div>
-<div class="go" aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 16px; background: #5B3FD1; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></div>
-</label>
-</div>
-<div style="display: flex; flex-direction: column; gap: 12px">
-<label class="choice" for="m-docs" style="box-sizing: border-box; position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 20px; padding: 24px 32px; color: #15111F"><input type="checkbox" class="mc" id="m-docs" aria-label="Documents and reports: open example" aria-haspopup="dialog">
-<div style="flex: 0 1 320px; min-width: 240px; display: flex; flex-direction: column; align-items: flex-start"><div style="display: flex; align-items: center; gap: 14px"><div style="flex: none; width: 44px; height: 44px; border-radius: 12px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">Documents and reports</div></div></div>
-<div style="flex: 1 1 380px; min-width: 0"><div style="padding: 14px 0; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I send the same report every Friday.</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I have piles of documents I need information out of.</div><div style="padding: 14px 0; border-top: 3px dotted #CFC8E3; font-size: 19px; line-height: 1.35; font-weight: 500; color: #15111F">I wish I knew what customers are saying about us.</div></div>
-<div class="go" aria-hidden="true" style="flex: none; width: 56px; height: 56px; border-radius: 16px; background: #5B3FD1; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></div>
-</label>
-</div>
-</div>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+<div class="wrap">
+<p class="eyebrow who">Ramūnas Jucevičius · AI Engineer · Vilnius</p>
+<h1 id="hero-title">What are you still doing by hand?</h1>
+<p class="lead">Pick the task you repeat every week and wish you didn&#x27;t.</p>
+<div id="work">
+<div class="choice"><div class="ctitle"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span><h2>Administration</h2></div><ul class="qs"><li>Where did the client say that?</li><li>What happened last week, and what&#x27;s coming next?</li><li>I wish someone could answer the routine emails for me.</li></ul><button type="button" class="more" data-open="ex-admin" aria-haspopup="dialog" aria-label="See example: Administration">See example <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M12 5v14M5 12h14"></path></svg></button></div>
+<div class="choice"><div class="ctitle"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg></span><h2>Data extraction</h2></div><ul class="qs"><li>What are my competitors charging today?</li><li>Where is my delivery right now?</li><li>I copy numbers from a website into a spreadsheet by hand.</li></ul><button type="button" class="more" data-open="ex-data" aria-haspopup="dialog" aria-label="See example: Data extraction">See example <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M12 5v14M5 12h14"></path></svg></button></div>
+<div class="choice"><div class="ctitle"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></span><h2>Documents and reports</h2></div><ul class="qs"><li>I send the same report every Friday.</li><li>I have piles of documents I need information out of.</li><li>I wish I knew what customers are saying about us.</li></ul><button type="button" class="more" data-open="ex-docs" aria-haspopup="dialog" aria-label="See example: Documents and reports">See example <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M12 5v14M5 12h14"></path></svg></button></div>
 </div>
 </div>
 </section>
-
-<!-- EXAMPLE POPUPS -->
-<div id="ex-admin" class="modal" role="dialog" aria-modal="true" aria-labelledby="admin-title">
-<label class="mback" for="m-admin" aria-label="Close"></label>
+<dialog id="ex-admin" class="modal" aria-labelledby="admin-title">
 <div class="mpanel">
-<label class="mx" for="m-admin" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 36px">
-<div style="flex: 1 1 380px; min-width: 0">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B3FD1">Example · AI agent for your inbox and chats</p>
-<h2 id="admin-title" style="margin: 14px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08; letter-spacing: -0.025em">Your inbox and chats, under control.</h2>
-<p style="margin: 16px 0 0; max-width: 32em; color: #433D55">Ask questions, get a weekly overview, and have routine replies drafted. Nothing is sent without your OK.</p>
-<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 20px; max-width: 34em">
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Where did they say that?</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Ask in Telegram or Slack, "What did the client say about the deadline?" The agent searches your email and chat and answers with links.</div></div>
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">What happened last week? What's coming next week?</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Every Monday morning you get one message with the key emails, decisions, deadlines and meetings.</div></div>
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Reply drafts in your tone, approved with one tap.</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">The agent drafts answers to routine emails in your style and sends them to you in Telegram or Slack. Approve with one tap, or edit first.</div></div>
+<form method="dialog"><button class="mx" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M6 6l12 12M18 6L6 18"></path></svg></button></form>
+<div class="mgrid">
+<div class="mtxt">
+<p class="eyebrow">Example · AI agent for your inbox and chats</p>
+<h3 id="admin-title">Your inbox and chats, under control.</h3>
+<p class="sub">Ask questions, get a weekly overview, and have routine replies drafted. Nothing is sent without your OK.</p>
+<p class="pick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M5 3l14 7-6 2-2 6z"></path></svg>Choose an example to see how it works</p>
+<div class="tabs" role="tablist" aria-label="Examples"><button type="button" class="tab" role="tab" id="admin-t0" aria-selected="true" aria-controls="admin-p0" tabindex="0"><span class="tn" aria-hidden="true">1</span><span class="tb"><span class="tt">Where did they say that?</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><button type="button" class="tab" role="tab" id="admin-t1" aria-selected="false" aria-controls="admin-p1" tabindex="-1"><span class="tn" aria-hidden="true">2</span><span class="tb"><span class="tt">What happened last week? What&#x27;s coming next?</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><button type="button" class="tab" role="tab" id="admin-t2" aria-selected="false" aria-controls="admin-p2" tabindex="-1"><span class="tn" aria-hidden="true">3</span><span class="tb"><span class="tt">Reply drafts in your tone</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button></div>
+<div class="descs" aria-live="polite"><p class="dd on">Ask in Telegram or Slack. The agent searches your email and chat and answers with links.</p><p class="dd">Every Monday morning you get one message with the key emails, decisions, deadlines and meetings.</p><p class="dd">The agent drafts answers to routine emails in your style and sends them to you for approval. Nothing goes out without your OK.</p></div>
+<p class="works">Works with: Gmail, Slack, Telegram.</p>
+<div class="mcta"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Sort%20out%20my%20inbox">Sort out my inbox</a><span>or write to <a href="mailto:ramatrix@gmail.com">ramatrix@gmail.com</a></span></div>
 </div>
-<p style="margin: 16px 0 0; font-size: 15px; color: #5C5670">Works with: Gmail, Slack, Telegram.</p>
-<div style="margin-top: 24px"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Sort%20out%20my%20inbox" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-weight: 600; text-decoration: none">Sort out my inbox</a><span style="margin-left: 14px; font-size: 14px; color: #5C5670">or write to <a href="mailto:ramatrix@gmail.com" style="font-weight: 600; color: #15111F">ramatrix@gmail.com</a></span></div>
-</div>
-<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
-<div role="img" aria-label="Diagram: your email and chat go to an AI agent that returns a ready reply draft" style="width: 100%; max-width: 480px; aspect-ratio: 1 / 1; box-sizing: border-box; padding: 36px; display: flex; flex-direction: column; justify-content: center; background-color: #FBFBFE; background-image: radial-gradient(circle, #B4BDF2 1.5px, transparent 1.8px); background-size: 22px 22px; border: 1px solid #DDD9E6; border-radius: 28px">
-<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 10px 14px">
-<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></div>
-<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Email and chat</div><div style="font-size: 13px; line-height: 1.3; color: #5C5670">Gmail, Slack, Telegram</div></div>
-</div>
-<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
-<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #5B3FD1; color: #FFFFFF; border-radius: 14px; padding: 10px 14px">
-<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #FFFFFF2E; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="10" rx="3"></rect><path d="M12 8V5"></path><circle cx="12" cy="4" r="1"></circle><circle cx="9.5" cy="13" r="1"></circle><circle cx="14.5" cy="13" r="1"></circle></svg></div>
-<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">AI agent</div><div style="font-size: 13px; line-height: 1.3; color: #E4DEFA">Finds, summarizes, drafts</div></div>
-</div>
-<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
-<div style="align-self: center; width: 100%; max-width: 320px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 14px 16px; box-shadow: 0 6px 18px rgba(21,17,31,.08)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A7096">Example output</div><div style="margin-top: 8px; font-size: 15px; font-weight: 600; line-height: 1.3">Draft reply · Re: Delivery date</div><div style="margin-top: 4px; font-size: 14px; line-height: 1.45; color: #433D55">Hi Anna, Thursday works for us. I'll confirm the time tomorrow morning.</div><div aria-hidden="true" style="display: flex; gap: 8px; margin-top: 12px; pointer-events: none; user-select: none; opacity: .8"><span style="display: inline-flex; align-items: center; min-height: 30px; padding: 0 14px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-size: 13px; font-weight: 600">Send</span><span style="display: inline-flex; align-items: center; min-height: 30px; padding: 0 14px; border-radius: 8px; border: 1.5px solid #CFC8E3; color: #15111F; font-size: 13px; font-weight: 600">Edit</span></div></div>
+<div class="dwrap"><div class="dg"><div class="dh2"><p class="lbl">Example</p><div class="dnav"><button type="button" class="prev" aria-label="Previous example"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><span aria-hidden="true"><b class="cur">1</b> / 3</span><button type="button" class="next" aria-label="Next example"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button></div></div><div class="dps"><div class="dp on" role="tabpanel" id="admin-p0" aria-labelledby="admin-t0"><div class="card"><div class="chead"><i></i>Telegram · your agent</div><div class="msgs"><div class="m me">What did the client say about the deadline?</div><div class="m bot">Anna wrote on Tuesday: “Friday delivery works for us.”<div class="chips"><span class="chip ">Email, 12 Oct</span><span class="chip ">Slack thread</span></div></div></div></div></div><div class="dp" role="tabpanel" id="admin-p1" aria-labelledby="admin-t1"><div class="card pad"><div class="dh">Monday overview</div><div class="sec"><b>Last week</b><ul><li>Contract signed with Client A</li><li>3 invoices sent, 1 overdue</li></ul></div><div class="sec"><b>This week</b><ul><li>Tue · Proposal due to Client B</li><li>Thu · Delivery to Anna</li><li>Fri · Team review, 14:00</li></ul></div></div></div><div class="dp" role="tabpanel" id="admin-p2" aria-labelledby="admin-t2"><div class="card"><div class="chead"><i></i>Telegram · your agent</div><div class="msgs"><div class="m bot">New email from Anna: “Can we deliver on Thursday?”</div><div class="m bot">Draft: “Hi Anna, Thursday works for us. I&#x27;ll confirm the time tomorrow morning.”<div class="chips"><span class="chip b">Send</span><span class="chip ">Edit</span></div></div></div></div></div></div></div></div>
 </div>
 </div>
-</div>
-</div>
-</div>
-
-<div id="ex-data" class="modal" role="dialog" aria-modal="true" aria-labelledby="data-title">
-<label class="mback" for="m-data" aria-label="Close"></label>
+</dialog>
+<dialog id="ex-data" class="modal" aria-labelledby="data-title">
 <div class="mpanel">
-<label class="mx" for="m-data" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 36px">
-<div style="flex: 1 1 380px; min-width: 0">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B3FD1">Example · Data from websites</p>
-<h2 id="data-title" style="margin: 14px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08; letter-spacing: -0.025em">Turn any website into your own data.</h2>
-<p style="margin: 16px 0 0; max-width: 32em; color: #433D55">A scraper collects the information on a schedule and delivers it to a sheet, an alert in your inbox, or however you like.</p>
-<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 20px; max-width: 34em">
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Competitor services</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Know the day a price changes.</div></div>
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Delivery status</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">All tracking pages in one table.</div></div>
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Data into your sheet</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">The same pages are visited every morning and your sheet fills itself.</div></div>
-</div>
-<div style="margin-top: 24px"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Get%20my%20data" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-weight: 600; text-decoration: none">Get my data</a><span style="margin-left: 14px; font-size: 14px; color: #5C5670">or write to <a href="mailto:ramatrix@gmail.com" style="font-weight: 600; color: #15111F">ramatrix@gmail.com</a></span></div>
-</div>
-<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
-<div role="img" aria-label="Diagram: websites go through a scraper and arrive as a table of price changes" style="width: 100%; max-width: 480px; aspect-ratio: 1 / 1; box-sizing: border-box; padding: 36px; display: flex; flex-direction: column; justify-content: center; background-color: #FBFBFE; background-image: radial-gradient(circle, #B4BDF2 1.5px, transparent 1.8px); background-size: 22px 22px; border: 1px solid #DDD9E6; border-radius: 28px">
-<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 10px 14px">
-<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"></path></svg></div>
-<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Websites</div><div style="font-size: 13px; line-height: 1.3; color: #5C5670">Even with no export button</div></div>
-</div>
-<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
-<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #5B3FD1; color: #FFFFFF; border-radius: 14px; padding: 10px 14px">
-<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #FFFFFF2E; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg></div>
-<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Scraper</div><div style="font-size: 13px; line-height: 1.3; color: #E4DEFA">Collects on a schedule</div></div>
-</div>
-<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
-<div style="align-self: center; width: 100%; max-width: 330px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 14px 16px; box-shadow: 0 6px 18px rgba(21,17,31,.08)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A7096">Example output</div><div style="margin-top: 8px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B3FD1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M3 15h18M9 4v16"></path></svg>competitors.xlsx</div><div style="margin-top: 10px; display: grid; grid-template-columns: 1.1fr 1.3fr 0.7fr; border-top: 1px solid #DDD9E6; border-left: 1px solid #DDD9E6; border-radius: 4px; overflow: hidden"><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; font-weight: 600; background: #EDEAFB; color: #15111F">Company</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; font-weight: 600; background: #EDEAFB; color: #15111F">Plan</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; font-weight: 600; background: #EDEAFB; color: #15111F">Price</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Company A</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Basic plan</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; text-align: right; font-weight: 600">€500</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Company B</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Basic plan</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; text-align: right; font-weight: 600">€480</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Company C</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3">Basic plan</div><div style="padding: 7px 10px; border-right: 1px solid #DDD9E6; border-bottom: 1px solid #DDD9E6; font-size: 13px; line-height: 1.3; text-align: right; font-weight: 600">€520</div></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<form method="dialog"><button class="mx" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M6 6l12 12M18 6L6 18"></path></svg></button></form>
+<div class="mgrid">
+<div class="mtxt">
+<p class="eyebrow">Example · Data from websites</p>
+<h3 id="data-title">Turn any website into your own data.</h3>
+<p class="sub">A scraper collects the information on a schedule and delivers it to a sheet, an alert in your inbox, or however you like.</p>
+<p class="pick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M5 3l14 7-6 2-2 6z"></path></svg>Choose an example to see how it works</p>
+<div class="tabs" role="tablist" aria-label="Examples"><button type="button" class="tab" role="tab" id="data-t0" aria-selected="true" aria-controls="data-p0" tabindex="0"><span class="tn" aria-hidden="true">1</span><span class="tb"><span class="tt">What are my competitors charging?</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><button type="button" class="tab" role="tab" id="data-t1" aria-selected="false" aria-controls="data-p1" tabindex="-1"><span class="tn" aria-hidden="true">2</span><span class="tb"><span class="tt">Where is my delivery?</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><button type="button" class="tab" role="tab" id="data-t2" aria-selected="false" aria-controls="data-p2" tabindex="-1"><span class="tn" aria-hidden="true">3</span><span class="tb"><span class="tt">Data into your sheet</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button></div>
+<div class="descs" aria-live="polite"><p class="dd on">Know the day a price changes.</p><p class="dd">All tracking pages in one table.</p><p class="dd">The same pages are visited every morning and your sheet fills itself.</p></div>
 
-<div id="ex-docs" class="modal" role="dialog" aria-modal="true" aria-labelledby="docs-title">
-<label class="mback" for="m-docs" aria-label="Close"></label>
+<div class="mcta"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Get%20my%20data">Get my data</a><span>or write to <a href="mailto:ramatrix@gmail.com">ramatrix@gmail.com</a></span></div>
+</div>
+<div class="dwrap"><div class="dg"><div class="dh2"><p class="lbl">Example</p><div class="dnav"><button type="button" class="prev" aria-label="Previous example"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><span aria-hidden="true"><b class="cur">1</b> / 3</span><button type="button" class="next" aria-label="Next example"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button></div></div><div class="dps"><div class="dp on" role="tabpanel" id="data-p0" aria-labelledby="data-t0"><div class="card pad"><div class="alert">Company B lowered its price today</div><div class="fname"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M3 15h18M9 4v16"></path></svg>competitors.xlsx</div><div class="tbl"><div class="h">Company</div><div class="h">Plan</div><div class="h">Price</div><div>Company A</div><div>Basic plan</div><div>€500</div><div>Company B</div><div>Basic plan</div><div><span class="chip warn">€480 ▼</span></div><div>Company C</div><div>Basic plan</div><div>€520</div></div></div></div><div class="dp" role="tabpanel" id="data-p1" aria-labelledby="data-t1"><div class="card pad"><div class="fname"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M3 15h18M9 4v16"></path></svg>deliveries.xlsx</div><div class="tbl"><div class="h">Order</div><div class="h">Carrier</div><div class="h">Status</div><div>#1042</div><div>Carrier A</div><div><span class="chip ok">Delivered</span></div><div>#1043</div><div>Carrier B</div><div><span class="chip info">In transit</span></div><div>#1044</div><div>Carrier A</div><div><span class="chip bad">Delayed</span></div></div></div></div><div class="dp" role="tabpanel" id="data-p2" aria-labelledby="data-t2"><div class="flow"><div class="nd"><div class="ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"></path></svg></div><div><b>Web pages</b><small>Even with no export button</small></div></div><svg class="arr" width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg><div class="nd hl"><div class="ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"></path><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"></path></svg></div><div><b>Scraper</b><small>Runs every day at 07:00</small></div></div><svg class="arr" width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg><div class="nd"><div class="ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M9 4v16"></path></svg></div><div><b>Your sheet</b><small>Filled automatically</small></div></div></div></div></div></div></div>
+</div>
+</div>
+</dialog>
+<dialog id="ex-docs" class="modal" aria-labelledby="docs-title">
 <div class="mpanel">
-<label class="mx" for="m-docs" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></label>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 36px">
-<div style="flex: 1 1 380px; min-width: 0">
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B3FD1">Example · Reports and documents</p>
-<h2 id="docs-title" style="margin: 14px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 42px); line-height: 1.08; letter-spacing: -0.025em">Less paperwork, same quality.</h2>
-<p style="margin: 16px 0 0; max-width: 32em; color: #433D55">Recurring reports, invoices, contracts and reviews get handled automatically. Where simple automation is enough, no AI is used.</p>
-<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 20px; max-width: 34em">
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">The same report every Friday</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Numbers are pulled from your tools, filled into your Word or PDF template and emailed. No AI needed.</div></div>
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">Piles of documents</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Invoices and contracts become one table, or you ask, "What does this say about termination?"</div></div>
-<div style="padding-top: 14px; border-top: 3px dotted #CFC8E3"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-weight: 600">What are customers saying?</span></div><div style="margin-top: 6px; font-size: 15px; line-height: 1.5; color: #433D55">Hundreds of reviews or emails become the top complaints, and whether they're improving.</div></div>
-</div>
-<div style="margin-top: 24px"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Lighten%20my%20paperwork" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 8px; background: #5B3FD1; color: #FFFFFF; font-weight: 600; text-decoration: none">Lighten my paperwork</a><span style="margin-left: 14px; font-size: 14px; color: #5C5670">or write to <a href="mailto:ramatrix@gmail.com" style="font-weight: 600; color: #15111F">ramatrix@gmail.com</a></span></div>
-</div>
-<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
-<div role="img" aria-label="Diagram: your tools and files go through automation or AI and come out as a finished report" style="width: 100%; max-width: 480px; aspect-ratio: 1 / 1; box-sizing: border-box; padding: 36px; display: flex; flex-direction: column; justify-content: center; background-color: #FBFBFE; background-image: radial-gradient(circle, #B4BDF2 1.5px, transparent 1.8px); background-size: 22px 22px; border: 1px solid #DDD9E6; border-radius: 28px">
-<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 10px 14px">
-<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M9 4v16"></path></svg></div>
-<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Your tools and files</div><div style="font-size: 13px; line-height: 1.3; color: #5C5670">Sheets, PDFs, reviews</div></div>
-</div>
-<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
-<div style="align-self: center; width: 100%; max-width: 280px; box-sizing: border-box; display: flex; align-items: center; gap: 12px; background: #5B3FD1; color: #FFFFFF; border-radius: 14px; padding: 10px 14px">
-<div style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #FFFFFF2E; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="10" rx="3"></rect><path d="M12 8V5"></path><circle cx="12" cy="4" r="1"></circle><circle cx="9.5" cy="13" r="1"></circle><circle cx="14.5" cy="13" r="1"></circle></svg></div>
-<div style="min-width: 0"><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Automation or AI</div><div style="font-size: 13px; line-height: 1.3; color: #E4DEFA">Whichever fits the task</div></div>
-</div>
-<svg width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="#7A7096" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center; flex: none"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg>
-<div style="align-self: center; width: 100%; max-width: 320px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #DDD9E6; border-radius: 14px; padding: 14px 16px; box-shadow: 0 6px 18px rgba(21,17,31,.08)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A7096">Example output</div><div style="margin-top: 8px; display: flex; align-items: center; gap: 10px"><div style="flex: none; width: 32px; height: 32px; border-radius: 8px; background: #EDEAFB; color: #5B3FD1; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></div><div><div style="font-size: 15px; font-weight: 600; line-height: 1.25">Weekly report.pdf</div><div style="font-size: 13px; line-height: 1.3; color: #5C5670">Built and emailed every Friday morning</div></div></div><div style="height: 8px; border-radius: 4px; background: #EDEAFB; margin-top: 8px; width: 100%"></div><div style="height: 8px; border-radius: 4px; background: #EDEAFB; margin-top: 8px; width: 86%"></div><div style="height: 8px; border-radius: 4px; background: #EDEAFB; margin-top: 8px; width: 64%"></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<form method="dialog"><button class="mx" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M6 6l12 12M18 6L6 18"></path></svg></button></form>
+<div class="mgrid">
+<div class="mtxt">
+<p class="eyebrow">Example · Reports and documents</p>
+<h3 id="docs-title">Less paperwork, same quality.</h3>
+<p class="sub">Recurring reports, invoices, contracts and reviews get handled automatically. Where simple automation is enough, no AI is used.</p>
+<p class="pick"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M5 3l14 7-6 2-2 6z"></path></svg>Choose an example to see how it works</p>
+<div class="tabs" role="tablist" aria-label="Examples"><button type="button" class="tab" role="tab" id="docs-t0" aria-selected="true" aria-controls="docs-p0" tabindex="0"><span class="tn" aria-hidden="true">1</span><span class="tb"><span class="tt">The same report every Friday</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><button type="button" class="tab" role="tab" id="docs-t1" aria-selected="false" aria-controls="docs-p1" tabindex="-1"><span class="tn" aria-hidden="true">2</span><span class="tb"><span class="tt">Piles of documents</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><button type="button" class="tab" role="tab" id="docs-t2" aria-selected="false" aria-controls="docs-p2" tabindex="-1"><span class="tn" aria-hidden="true">3</span><span class="tb"><span class="tt">What are customers saying?</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button></div>
+<div class="descs" aria-live="polite"><p class="dd on">Numbers are pulled from your tools, filled into your Word or PDF template and emailed. No AI needed.</p><p class="dd">Invoices and contracts become one table, or you just ask a question.</p><p class="dd">Hundreds of reviews or emails become the top complaints, and whether they&#x27;re improving.</p></div>
 
-<!-- CONTACT -->
-<section id="contact" aria-labelledby="contact-title" style="background: #15111F; color: #EEEAF7; padding: 88px 0">
-<div style="max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
-<h2 id="contact-title" style="margin: 0; max-width: 16em; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.06; letter-spacing: -0.025em">Send the task, get an honest answer.</h2>
-<p style="margin: 20px 0 0; max-width: 34em; font-size: 19px; color: #B3ACC6">Describe the task in a few lines: what you do by hand, how often, and which tools are involved.</p>
-<div style="margin: 28px 0 0; max-width: 40em; padding: 20px 24px; border: 3px dotted #5A4C8A; border-radius: 16px; font-size: 18px; line-height: 1.5; color: #EEEAF7">Not every task needs a custom build. Often Claude or ChatGPT, set up properly, is enough. Ramatrix can set them up for you and your team, or build something custom when the task really needs it.</div>
-<div style="display: flex; align-items: center; gap: 14px; margin-top: 32px"><div aria-hidden="true" style="flex: none; width: 52px; height: 52px; border-radius: 50%; background: #5B3FD1; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.02em">RJ</div><div><div style="font-size: 18px; font-weight: 600; color: #EEEAF7">Ramūnas Jucevičius</div><div style="font-size: 15px; line-height: 1.4; color: #B3ACC6">AI Engineer · Automation, AI solutions, AI agent development, cloud engineering</div></div></div>
-<div style="margin-top: 24px"><a class="btn" href="mailto:ramatrix@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 10px; background: #FFFFFF; color: #15111F; font-weight: 600; font-size: 20px; text-decoration: none">ramatrix@gmail.com <span aria-hidden="true">→</span></a></div>
+<div class="mcta"><a class="btn" href="mailto:ramatrix@gmail.com?subject=Lighten%20my%20paperwork">Lighten my paperwork</a><span>or write to <a href="mailto:ramatrix@gmail.com">ramatrix@gmail.com</a></span></div>
+</div>
+<div class="dwrap"><div class="dg"><div class="dh2"><p class="lbl">Example</p><div class="dnav"><button type="button" class="prev" aria-label="Previous example"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button><span aria-hidden="true"><b class="cur">1</b> / 3</span><button type="button" class="next" aria-label="Next example"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M9 6l6 6-6 6"></path></svg></button></div></div><div class="dps"><div class="dp on" role="tabpanel" id="docs-p0" aria-labelledby="docs-t0"><div class="flow"><div class="nd"><div class="ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M9 4v16"></path></svg></div><div><b>Your tools</b><small>Sales, CRM, spreadsheets</small></div></div><svg class="arr" width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg><div class="nd hl"><div class="ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></div><div><b>Automation</b><small>Fills your Word or PDF template</small></div></div><svg class="arr" width="12" height="28" viewBox="0 0 12 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 0v22"></path><path d="M2 18l4 5 4-5"></path></svg><div class="nd"><div class="ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></div><div><b>Inbox</b><small>Sent every Friday, 08:00</small></div></div></div></div><div class="dp" role="tabpanel" id="docs-p1" aria-labelledby="docs-t1"><div class="card"><div class="chead"><i></i>Document assistant</div><div class="msgs"><div class="m me">What does this contract say about termination?</div><div class="m bot">Clause 9.2: either side may terminate with 30 days&#x27; written notice.<div class="chips"><span class="chip ">contract-2024.pdf, p. 7</span></div></div></div></div></div><div class="dp" role="tabpanel" id="docs-p2" aria-labelledby="docs-t2"><div class="card pad"><div class="dh">Top complaints · 480 reviews</div><div class="bars"><div class="bar"><b><span>Late delivery</span><span>42%</span></b><i><u style="width:42%"></u></i></div><div class="bar"><b><span>Pricing</span><span>27%</span></b><i><u style="width:27%"></u></i></div><div class="bar"><b><span>Support wait time</span><span>18%</span></b><i><u style="width:18%"></u></i></div></div><p class="note2">Late delivery complaints are down 8% on last month</p></div></div></div></div></div>
+</div>
+</div>
+</dialog>
+<section id="contact" class="contact" aria-labelledby="contact-title">
+<div class="wrap">
+<h2 id="contact-title">Send the task, get an honest answer.</h2>
+<p class="lead">Describe the task in a few lines: what you do by hand, how often, and which tools are involved.</p>
+<p class="note">Not every task needs a custom build. Often Claude or ChatGPT, set up properly, is enough. Ramatrix can set them up for you and your team, or build something custom when the task really needs it.</p>
+<div class="cta">
+<a class="btn big" href="mailto:ramatrix@gmail.com">ramatrix@gmail.com <span aria-hidden="true">→</span></a>
+<button type="button" id="copy" class="btn big ghost" data-done="Copied" aria-live="polite">Copy email</button>
+<a class="btn big ghost" href="https://www.linkedin.com/in/ramunas-jucevicius" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ><path d="M7 10v7M7 7v.01M11 17v-7m0 3c0-2 1.5-3 3-3s3 1 3 3v4"></path><rect x="3" y="3" width="18" height="18" rx="3"></rect></svg> LinkedIn</a>
+</div>
 </div>
 </section>
-
 </main>
-
-<footer style="background: #15111F; border-top: 3px dotted #3A3258; color: #B3ACC6">
-<div style="max-width: 1180px; margin: 0 auto; padding: 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
-<span>© 2026 Ramatrix · Vilnius, Lithuania</span>
-<span>Automation · AI agents · Web scraping · Cloud engineering</span>
-</div>
+<footer>
+<div class="wrap"><span>© 2026 Ramatrix · Vilnius, Lithuania</span></div>
 </footer>
-
-</div>
+<script>
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.open).showModal()));
+document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+document.querySelectorAll('dialog').forEach(d=>{const t=[...d.querySelectorAll('[role=tab]')],cur=d.querySelector('.cur');let i=0;
+const go=(n,f)=>{i=(n+t.length)%t.length;t.forEach((y,j)=>{const on=j==i;y.setAttribute('aria-selected',on);y.tabIndex=on?0:-1;document.getElementById(y.getAttribute('aria-controls')).classList.toggle('on',on)});cur.textContent=i+1;d.querySelectorAll('.dd').forEach((p,j)=>p.classList.toggle('on',j==i));if(f)t[i].focus()};
+t.forEach((x,j)=>x.addEventListener('click',()=>go(j)));
+d.querySelector('.prev').addEventListener('click',()=>go(i-1));d.querySelector('.next').addEventListener('click',()=>go(i+1));
+d.addEventListener('keydown',k=>{const h={ArrowLeft:-1,ArrowRight:1}[k.key]||(k.target.getAttribute('role')=='tab'&&{ArrowUp:-1,ArrowDown:1}[k.key]);if(h){k.preventDefault();go(i+h,k.target.getAttribute('role')=='tab')}})});
+const th=document.getElementById('theme'),rt=document.documentElement;const lab=()=>th.setAttribute('aria-label',rt.dataset.theme=='dark'?th.dataset.l:th.dataset.d);lab();th.addEventListener('click',()=>{const n=rt.dataset.theme=='dark'?'light':'dark';rt.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}lab()});
+const c=document.getElementById('copy');
+if(c&&navigator.clipboard)c.addEventListener('click',()=>navigator.clipboard.writeText('ramatrix@gmail.com').then(()=>{const t=c.textContent;c.textContent=c.dataset.done;setTimeout(()=>c.textContent=t,2000)}));
+else if(c)c.hidden=true;
+</script>
 </body>
 </html>
